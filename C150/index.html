@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene background="color:gray">
+
+    <a-camera wasd-controls-enabled="false" position="0 8 20"></a-camera>
+
+    <!-------------------------------------------Asset Management------------------------------------------->
+    <a-assets>      
+
+      <a-asset-item id="table-obj" src="./models/obj/CoffeeTableModel/tinker.obj"></a-asset-item>
+      <a-asset-item id="table-mtl" src="./models/obj/CoffeeTableModel/obj.mtl"></a-asset-item>
+
+      <a-asset-item id="side-obj" src="./models/obj/SideTable/tinker.obj"></a-asset-item>
+      <a-asset-item id="side-mtl" src="./models/obj/SideTable/obj.mtl"></a-asset-item>
+
+      <a-asset-item id="table-gltf" src="./models/gltf/CoffeeTableModel.glb"></a-asset-item>
+      
+      <a-asset-item id="sarika-obj" src="./models/obj/sarika/tinker.obj"></a-asset-item>
+      <a-assets-item id="sarika-mtl" src="./models/obj/sarika/obj.mtl"></a-assets-item>
+
+      <a-asset-item id="sarika" src="./models/gltf/C149.glb"></a-asset-item>
+    </a-assets>
+    
+    
+    <!-------------------------------------Circular Plane----------------------------------------------->
+    
+    <a-circle id="floor" position="-0.4 -0.76 -25" rotation="-90 0 0" radius="100" shadow="receive: true" visible="true"
+      color="white">
+    </a-circle>
+    
+  
+    <!-------------------------------------Room Walls----------------------------------------------->
+    <a-entity >
+
+      <!--BACK-->
+      <a-box color="#f78291" position="0.076 -4 -39" width="50" height="50">
+      </a-box>
+      <!--RIGHT-->
+      <a-box color="#f56189" rotation="0 -90 0" position="25.5 -2.9 -15" width="50" height="50">
+      </a-box>
+      <!--LEFT-->
+      <a-box color="#f56189" rotation="0 -90 0" position="-25.9 -3.4 -15" width="50" height="50">
+      </a-box>
+      <!--TOP-->
+      <a-box color="#f78291" rotation="90 0 0" position="0 21.4 -15" width="50" height="50">
+      </a-box>
+
+    </a-entity>
+    
+    <!--------------------------------------OBJ Models----------------------------------------------------------->   
+  
+    <!--<a-entity obj-model="obj: #table-obj; mtl: #table-mtl"  position="5 0 0" rotation="-90 -40 0" scale="0.1 0.1 0.1 "
+    ></a-entity>
+
+    <a-entity obj-model="obj: #side-obj; mtl: #side-mtl"  position="-10 0 -10" rotation="-90 45 0" scale="0.1 0.1 0.1 "
+    ></a-entity>-->
+
+    <a-entity obj-model="obj: #sarika-obj; mtl: #sarika-mtl" position="-3 0.3 -5" scale="0.2 0.2 0.2" rotation="-90 0 0"></a-entity>
+
+    <!--<a-entity gltf-model="#sarika" scale = "0.2 0.2 0.2" position="-3 0.3 -5"></a-entity>-->
+  
+  </a-scene>
+</body>
+
+</html>

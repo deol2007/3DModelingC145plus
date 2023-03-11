@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene background="color: #000000">
+
+        <!--Camera-->
+        <!--Setting the entity's position-->>
+        <a-entity position="0 0 30">
+            <a-camera></a-camera>
+        </a-entity>
+
+
+        <!--Sun-->
+        <a-entity>
+            <a-sphere position="0 0 0" radius="2" color="orange"></a-sphere>
+        </a-entity>
+
+        <!--Mercury-->
+        <!--the anmiation variable is given the property of rotation, and give an angle to rotate to, and set a easing-->
+        <!--the animation will loop and the duration is 20000, the easing is linear-->
+        <a-entity position="0 0 0" rotation="0 0 0"
+            animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 20000">
+            <a-sphere position="1  0 -5" radius="0.2" color="grey"></a-sphere>  
+        </a-entity>
+        
+
+        <!--Venus-->
+        <!--the anmiation variable is given the property of rotation, and give an angle to rotate to, and set a easing-->
+        <!--the animation will loop and the duration is 20000, the easing is linear-->
+        <a-entity position="0 0 0" rotation="0 0 0"
+            animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 25000">
+            <a-sphere position="3  0 -5" radius="0.3" color="red"></a-sphere>  
+        </a-entity>
+
+        <!--Earth-->
+        <!--the anmiation variable is given the property of rotation, and give an angle to rotate to, and set a easing-->
+        <!--the animation will loop and the duration is 20000, the easing is linear-->
+        <a-entity position="0 0 0" rotation="0 0 0"
+
+            animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 30000">
+            <a-sphere position="5  0 -5" radius="0.4" color="green"></a-sphere>  
+        </a-entity>
+
+        <!--Mars-->
+        <!--the anmiation variable is given the property of rotation, and give an angle to rotate to, and set a easing-->
+        <!--the animation will loop and the duration is 20000, the easing is linear-->
+        <a-entity position="0 0 0" rotation="0 0 0"
+
+            animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 35000">
+            <a-sphere position="7  0 -5" radius="0.5" color="orange"></a-sphere>  
+        </a-entity>
+
+        <!--Jupiter-->
+        <!--the anmiation variable is given the property of rotation, and give an angle to rotate to, and set a easing-->
+        <!--the animation will loop and the duration is 20000, the easing is linear-->
+        <a-entity position="0 0 0" rotation="0 0 0"
+
+            animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 40000">
+            <a-sphere position="9  0 -5" radius="0.6" color="teal"></a-sphere>  
+        </a-entity>
+
+        <!--Saturn-->
+        <!--the anmiation variable is given the property of rotation, and give an angle to rotate to, and set a easing-->
+        <!--the animation will loop and the duration is 20000, the easing is linear-->
+        <a-entity position="0 0 0" rotation="0 0 0"
+
+            animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 45000">
+            <a-sphere position="11  0 -5" radius="0.7" color="brown"></a-sphere>  
+        </a-entity>
+
+        <!--Uranus-->
+        <!--the anmiation variable is given the property of rotation, and give an angle to rotate to, and set a easing-->
+        <!--the animation will loop and the duration is 20000, the easing is linear-->
+        <a-entity position="0 0 0" rotation="0 0 0"
+
+            animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 50000">
+            <a-sphere position="13  0 -5" radius="0.8" color="blue"></a-sphere>  
+        </a-entity>
+
+        <!--Neptune-->
+        <!--the anmiation variable is given the property of rotation, and give an angle to rotate to, and set a easing-->
+        <!--the animation will loop and the duration is 20000, the easing is linear-->
+        <a-entity position="0 0 0" rotation="0 0 0"
+
+            animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 55000">
+            <a-sphere position="15  0 -5" radius="0.9" color="purple"></a-sphere>  
+        </a-entity>
+
+        <!--Pluto-->
+        <!--the anmiation variable is given the property of rotation, and give an angle to rotate to, and set a easing-->
+        <!--the animation will loop and the duration is 20000, the easing is linear-->
+        <a-entity position="0 0 0" rotation="0 0 0"
+
+            animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 60000">
+            <a-sphere position="19  0 -5" radius="0.3" color="white"></a-sphere>  
+        </a-entity>
+    </a-scene>
+</body>
+
+</html>

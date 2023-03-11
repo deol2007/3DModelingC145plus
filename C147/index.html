@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene background="color: #000000">
+
+        <!--Camera-->
+        <a-entity position="0 0 15">
+            <a-camera></a-camera>
+        </a-entity>
+
+        <a-entity
+            sound="src: https://cdn.glitch.com/850dd813-e5e9-4dd0-9751-38981ae74172%2Ffh_space_discovery_-_earth_proud_music_preview(1).mp3?v=1604306441093; autoplay: true; volume: 0.5">
+        </a-entity>
+
+
+        <!--Sky-->
+        <!--The src is a link/image that the entity with display as subsitute for color-->
+        <a-sky src="https://cdn.glitch.com/850dd813-e5e9-4dd0-9751-38981ae74172%2Fvia_lactea.png?v=1604296331712">
+
+        </a-sky>
+
+        <!--Sun-->
+        <a-entity>
+            <a-sphere position="0 0 0" radius="2"
+                src="https://cdn.glitch.com/850dd813-e5e9-4dd0-9751-38981ae74172%2Fsol.jpg?v=1604296185621"></a-sphere>
+        </a-entity>
+
+        <!--Mercury-->
+        <a-entity position="0 0 0" rotation="0 0 0"
+            animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 20000">
+            <a-sphere position="1  0 -5" radius="0.2"
+                src="https://cdn.glitch.com/850dd813-e5e9-4dd0-9751-38981ae74172%2Fmercurio.jpg?v=1604298142259">
+            </a-sphere>
+        </a-entity>
+
+        <!--Venus-->
+        <a-entity position="0 0 0" rotation="0 0 0"
+            animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 25000">
+            <a-sphere position="6  0 -5" radius="0.3"
+                src="https://cdn.glitch.me/850dd813-e5e9-4dd0-9751-38981ae74172%2Fvenus.jpg">
+            </a-sphere>
+        </a-entity>
+
+        <!--Earth-->
+        <a-entity position="0 0 0" rotation="0 0 0"
+            animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 10000">
+            <a-sphere position="10  0 -5" radius="0.4"
+                src="https://previews.123rf.com/images/antonshahrai/antonshahrai2007/antonshahrai200700006/151534030-world-texture-satellite-image-of-the-earth-high-resolution-texture-of-the-planet-with-relief-shading.jpg">
+                <!--Moon-->
+                <a-entity position="0 0 0" rotation="0 0 0" animation="property: rotation;
+                             to:0 360 0;
+                         easing: linear;
+                           loop:true;
+                            dur:1000">
+                    <a-sphere color="grey" position="1 0 0" radius="0.2">
+                    </a-sphere>
+                </a-entity>
+
+            </a-sphere>
+        </a-entity>
+        <!--Mars-->
+        <a-entity position="0 0 0" rotation="0 0 0"
+            animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 20000">
+            <a-sphere position="14  0 -5" radius="0.6"
+                src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6e527eb9-99dc-4554-9ea2-dd0e84e79860/dckiu8c-727ad23f-7760-42f2-9669-aa2de0f3c832.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzZlNTI3ZWI5LTk5ZGMtNDU1NC05ZWEyLWRkMGU4NGU3OTg2MFwvZGNraXU4Yy03MjdhZDIzZi03NzYwLTQyZjItOTY2OS1hYTJkZTBmM2M4MzIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.SeaJeKBwBRMIF5PfyQWTZJ8x5_p6_oDCTy0GE3ldXUU">
+            </a-sphere>
+        </a-entity>
+        <!--Jupiter-->
+        <a-entity position="0 0 0" rotation="0 0 0"
+            animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 40000">
+            <a-sphere position="18  0 -5" radius="0.7"
+                src="https://external-preview.redd.it/JJTceYLFNKh1trdhGTiDAku5dMw24H61e8xyi2_TS6g.jpg?auto=webp&s=1f3d29a36611e75f0fa8bf6e25865809a41771ad">
+            </a-sphere>
+        </a-entity>
+        <!--Saturn-->
+        <a-entity position="0 0 0" rotation="0 0 0"
+            animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 45000">
+            <a-sphere position="22  0 -5" radius="0.8"
+                src="https://cdn.glitch.me/850dd813-e5e9-4dd0-9751-38981ae74172%2Fsaturn.png">
+
+                <!--Saturn rings-->
+                <a-torus color="red" rotation="90 0 0" radius="2" radius-tubular="0.0015"
+                    segments-tubular="1000"></a-torus>
+                <a-torus color="pink" rotation="90 0 0" radius="1.9" radius-tubular="0.02"
+                    segments-tubular="1000"></a-torus>
+                <a-torus color="orange" rotation="90 0 0" radius="1.8" radius-tubular="0.025"
+                    segments-tubular="1000"></a-torus>
+            </a-sphere>
+        </a-entity>
+        <!--Uranus-->
+        <a-entity position="0 0 0" rotation="0 0 0"
+            animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 50000">
+            <a-sphere position="26  0 -5" radius="0.9"
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQDw0NDxAPDw0NDQ0NDQ0NDw8NDQ0NFREWFhURFRUYHSggGBolGxUVITEhJSkrLi46Fx8/OD84NygtLjcBCgoKDg0NDw0NFSsZFRktLS0tKy0rKy0tLTc3LS03LSstNy0rKzc3NzctNy03Ny0tKy0tLS0rKy0tNy0rKy0tLf/AABEIAJ8BPgMBIgACEQEDEQH/xAAZAAADAQEBAAAAAAAAAAAAAAAAAQMCBAb/xAAdEAEAAwEBAQEBAQAAAAAAAAAAARESAhMDYSEx/8QAGAEBAQEBAQAAAAAAAAAAAAAAAAECBAP/xAAXEQEBAQEAAAAAAAAAAAAAAAAAERIT/9oADAMBAAIRAxEAPwD3+CnlTlulckc+RlfInkIjksrFQRKhhujoSJ4HmrHLWRYj5jEK0UchE8QMK4GSkTyMqfwf6ETyefxrIoRjJU1IgIVCmgEZoU3DUCxKhSkwVwUyzRWpR5CJaFKZKgjGBhSIOYKRLAw1bQRKipfIoIjHLWW5g4gIlmBlWYY6n8KRSDjpiOjsi1qZZmGbOJCnQGimUCEFMiJVG4NnQ0itcw0xotBW5FM6EyFOhTNxA0ocyGBMiDooLqWYkRSGqTiWokVqIaYjo9IpnMM6PQU4lq2Jkp6UrXRUUSLCtQJZ0NEK3BWV/pxIHYlmZKJCiGoYsaCtyJhmZEyCGz24fUez0y5+jun6D0cPsPYydHb6Cfo4p+w9jJ0dfoe3DH2a9jJ0duxtxew9jJ0d3oPRxexT9TJ0dvocfRw+w9jJ0d2y9HF7D2MnR2z9Cn6OL2L2Mp0dnXZR25J+rPqZOju9Go+rhj7HH1Mr0d0fQ/Rw+px9jJ0dmxtzcfWFfp3xX8n+mV2rH0G3FP1E/UynR2+heri9Sn6mTo7vQT9HF7D2MnR27G/1xT9h7GTo7vQekOH2EfYydHbP0Ho4p+w9jJ0ds/QT24vYexk6OcSlo9PaOaqC0p6EdJCq2LR0VkSq2NJWI6IaWNGOhZFq1naOj0Q0rMi0tDRDSliZSnoaIlUso6T0NEK310zpiZLRDSsS1Eo6OOiGlrESlHR6ItWsWjHR6IVWxaVjSxNKWLS0U9JFqtnaUdDSwqoSiTshVLCei0kKpPQtKZESQqwtHQtYUrESxMixlqxLJ2BkJkrEFiJZOANpmzsVoWwdg1ZM2LBqZFsiQMpkCxCllqZZVk2mIO0aahpiJMVuxbAsG7EyxYsGikWUyBtRKcnYNi2bFg1ZM2LA7FlZA2JlmJFqIR3I2lPRaby8tK7kalKehoyaVjqTtLR6XKaU0NSlo9GTTepPUp6GkyulNDcp6GjJpTZalPQ0ZNKak9SlHR6MppS2o6R0NrlNK9dM7TnqysyVbRaTjo7TK6b1I1LFizK6b1I1KU9HoyaU1I2lsaXKaW0WpS0NGTSuxtLTM9GV0vqRqUI6PRlNLbGkdjRk0rqRpLQ0ZNLakaSjpqJMmmaKIaDTJUKaiBIMxApoBGaOjOgjIpqjoWMUKboRAkYyJ5UoULE6KlKKgjNFTdCgjNCmqOgjFClKKgjEwKboRAkYyzlWioInEG3RUEZoqboBGaZ65UmCmAidFTcwVBCiBEGYQqEQdCICA4MRARvIyvkZRuIZPK2TyEQyeVsjIRLAjhbJ5BHIytk8hEcDC2TyEQweFqFCxHIytkZCI5GFqGQiOBhahQRDB4WyWRIlkZVyMhEMjC+SyERwWF8jIRDAwvkYCOfBYdOCngI5sjLowMBHNkZdGBgI58nlfAwEQyI5XweQihUYFFEYAAAADAAACgAAAAgAAoACEMEAMEYAAAAAKAAgAAAAAEDCoVAwDNGYAqAMAAEaAFGIQAFAAAAAAAAAAAAAAABAAAAOhQpA6FAQOgBAGBAwBAGBAAAAAAMUBAUAf//Z">
+            </a-sphere>
+        </a-entity>
+        <!--Neptune-->
+        <a-entity position="0 0 0" rotation="0 0 0"
+            animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 55000">
+            <a-sphere position="30  0 -5" radius="1"
+                src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3dbe3745-0eb8-4e98-aac3-197221ef117e/dc28qg7-205f3f54-cc0d-44cf-9b1f-b70183f553ba.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzNkYmUzNzQ1LTBlYjgtNGU5OC1hYWMzLTE5NzIyMWVmMTE3ZVwvZGMyOHFnNy0yMDVmM2Y1NC1jYzBkLTQ0Y2YtOWIxZi1iNzAxODNmNTUzYmEuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.b26fzftjNAlpM5G2sgSR1Ycmov1xfSpi-87Z6KKKTOw">
+            </a-sphere>
+        </a-entity>
+
+        <!--Orbital Paths-->
+        <!--Mercury orbit-->
+        <a-torus color="grey" rotation="90 0 0" radius="5" radius-tubular="0.01" segments-tubular="1000"></a-torus>
+
+        <!--Venus Orbit-->
+        <a-torus color="grey" rotation="90 0 0" radius="7.8" radius-tubular="0.01" segments-tubular="1000"></a-torus>
+
+        <!--Earth Orbit-->
+        <a-torus color="grey" rotation="90 0 0" radius="10.6" radius-tubular="0.01" segments-tubular="1000"></a-torus>
+
+        <!--Mars Orbit-->
+        <a-torus color="grey" rotation="90 0 0" radius="14.5" radius-tubular="0.01" segments-tubular="1000"></a-torus>
+
+        <!--Jupitar Orbit-->
+        <a-torus color="grey" rotation="90 0 0" radius="21.5" radius-tubular="0.01" segments-tubular="1000"></a-torus>
+
+        <!--Saturn Orbit-->
+        <a-torus color="grey" rotation="90 0 0" radius="26.5" radius-tubular="0.01" segments-tubular="1000"></a-torus>
+
+        <!--Uranus Orbit-->
+        <a-torus color="grey" rotation="90 0 0" radius="31.5" radius-tubular="0.01" segments-tubular="1000"></a-torus>
+
+        <!--Neptune Orbit-->
+        <a-torus color="grey" rotation="90 0 0" radius="36.5" radius-tubular="0.01" segments-tubular="1000"></a-torus>
+    </a-scene>
+</body>
+
+</html>
