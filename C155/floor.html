@@ -1,0 +1,74 @@
+<!-- 
+ we can use two components of this A-Frame library which can initiate the physics simulation in the scene: 
+ static-body component and dynamic-body component. 
+
+ static-body: These are fixed-position objects (or animated objects). 
+ Static bodies are not affected by gravity and collisions, 
+ but these can interact with other objects in the scene. 
+
+ dynamic-body: These are freely moving objects. 
+ Dynamic bodies have mass, and they fall if gravity is enabled and bounce off or collide with other objects. 
+ When we make torus and sphere dynamic, they fall due to gravity. 
+ When the floor is made static, the torus and the sphere collide with it. 
+
+
+ You see the torus and sphere bouncing off the box for some time and then coming to rest instead of passing 
+ through the box. Now, when objects/bodies come in contact in the real world, there is always some friction, 
+ restitution (and other physical properties) between those two bodies. 
+
+ Friction is a force between any bodies in contact. 
+ Restitution is the property that tells about the bounciness of the body. 
+
+ In A-Frame, these properties of physics can be configured using the physics component. 
+ We will set these properties globally to all the physics bodies in the scene.
+
+
+
+
+
+ -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+</head>
+
+<body>
+  <a-scene physics="debug:true; friction: 0.1; restitution: 0.6">
+    <!--Camera-->
+    <a-entity position=" 0 1.6 15">
+      <a-camera></a-camera>
+    </a-entity>
+
+    <!--Torus-->
+    <a-entity>
+      <!--  In A-Frame,  we see  shapes and modify them. To the colliding shape, 
+        we can use the “debug” property and set it to true. The default shape of the collider comes 
+        automatically based on the object. The default shape of the collider can be changed with the help 
+        of the shape property of the dynamic and static body components. We will modify the shape around 
+        the torus from box to sphere. For this, we can set the shape to a sphere. 
+        And if we want to modify the radius of the collider sphere, we can use sphereRadius property. -->
+      <a-torus position="5 5 -5" color="#43ABBE" dynamic-body="shape:sphere; sphereRadius:2">
+      </a-torus>
+    </a-entity>
+
+    <!--Sphere-->
+    <a-entity>
+      <a-sphere position="0 5 -5" color="orange" dynamic-body> </a-sphere>
+    </a-entity>
+
+    <!--Floor-->
+    <a-entity>
+      <a-box color="#EF2D5E" position="2.5 -5 -10" rotation="0 0 0" scale="20 1 20" static-body>
+      </a-box>
+    </a-entity>
+  </a-scene>
+</body>
+
+</html>
