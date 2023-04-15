@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Virtual Tour</title>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+
+  <script src="js/CursorEvents.js"></script>
+  <script src="js/Tour.js"></script>
+  <script src="js/SideView.js"></script>
+
+</head>
+
+<body>
+  <!-- `<a-scene id="main-scene">` is creating the main scene for the virtual tour. It is the container
+ for all the 3D elements and entities that will be displayed in the virtual tour. -->
+  <a-scene id="main-scene">
+
+    <!-- `<a-sky>` is creating a skybox in the virtual tour. The `id` attribute is used to identify the
+    entity, `radius` attribute is setting the radius of the skybox and `color` attribute is setting
+    the color of the skybox. In this case, the skybox will have a radius of 5000 and a light blue
+    color. -->
+    <a-sky id="main-container" radius="5000" color="#98DAFC"></a-sky>
+
+    <!-- Places Container -->
+    <!-- `<a-entity id="places-container" cursor-listener tour></a-entity>` is
+    creating an entity container for the different places in the virtual
+    tour. The `cursor-listener` and `tour` attributes are custom components
+    that will be used to add interactivity and functionality to the entity. -->
+    <a-entity id="places-container" cursor-listener tour></a-entity>
+
+    <!-- Different Side View of the Places -->
+    <!-- This code is creating an entity container for the different side views of the places in the
+    virtual tour. The `id` attribute is used to identify the entity, `place-side-view` attribute is
+    a custom component that will be used to add functionality to the entity, and `cursor-listener`
+    attribute is another custom component that will be used to add interactivity to the entity. -->
+    <a-entity id="side-view-container" place-side-view cursor-listener></a-entity>
+
+    <!-- CAMERA -->
+    <!-- `<a-camera>` is creating a camera entity in the virtual tour. The `id` attribute is used to
+    identify the entity, and `wasd-controls="enabled:false;"` attribute is disabling the default
+    WASD keyboard controls for the camera. -->
+    <a-camera id="camera" wasd-controls="enabled:false;">
+
+      <!-- App Title -->
+      <!-- This code is creating a title and subtitle for the virtual tour application. The `a-entity`
+     element with `id="app-title"` is positioned at `0 0.73 -1` in the virtual space and contains a
+     `text` component with the text "It's time to travel virtually!" styled with the `exo2bold`
+     font, centered alignment, a width of 2, and black color. The `a-entity` element with
+     `id="app-subtitle"` is positioned at `0 -0.1 0` relative to the `app-title` element and
+     contains a `text` component with the text "Travel Around The World" styled with the `dejavu`
+     font, centered alignment, a width of 1, and a dark blue color. -->
+      <a-entity id="app-title" position="0 0.73 -1"
+        text="font: exo2bold; align: center; width: 2; color: #000; value: It's time to travel virtually!">
+        <a-entity id="app-subtitle" position="0 -0.1 0"
+          text="font: dejavu; align: center; width: 1; color: #0F184E; value: Travel Around The World"></a-entity>
+      </a-entity>
+
+      <!-- CURSOR -->
+      <!-- This code is creating a cursor for the camera in the virtual tour. The cursor is an entity with
+    a ring geometry and a white flat material. It is positioned at a distance of 1 unit from the
+    camera along the z-axis. The cursor is used to interact with the different elements in the
+    virtual tour. -->
+      <a-entity id="camera-cursor" cursor position="0 0 -1"
+        geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="color: #fff; shader: flat">
+      </a-entity>
+    </a-camera>
+  </a-scene>
+</body>
+
+</html>

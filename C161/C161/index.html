@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Shooting Game in Virtual Reality</title>
+  <!-- 
+    These two lines of code are linking two external JavaScript files to the HTML document. 
+    The first file is the A-Frame library, which is a web framework for building virtual reality experiences. 
+    The second file is the A-Frame Physics System, which is a plugin for A-Frame that adds physics
+    simulation to virtual reality scenes. 
+  -->
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+
+  <!-- Linking an external JavaScript file called "shoot.js" to the HTML document. This file likely
+contains the code for shooting bullets in the virtual reality shooting game. -->
+  <script src="./shoot.js"></script>
+</head>
+
+<body>
+  <!-- `<a-scene id="scene">` is creating an A-Frame scene with an ID of "scene". This is where all the
+virtual reality elements will be placed and rendered. -->
+  <a-scene id="scene">
+
+    <!-- to find a way to get the camera's direction and use that as the direction to shoot the bullet. 
+  This can be done with the help of a predefined method in the Three.js library. 
+  
+  Let's discuss a bit about the relationship between A-Frame and Three.js. 
+  We know that A-Frame is built on Three.js (which means that when we use A-Frame, 
+  it is Three.js that is working behind the scenes). We need to see how we can access 
+  any object or function present in Three.js using A-Frame. A-Frame’s <a-scene> is mapped 
+  with a Three.js scene. 
+  The Three.js scene is accessible from the <a-scene> element as .object3D. 
+  A-Frame’s <a-entity> is mapped to one or more Three.js objects. 
+  Every A-Frame entity (<a-entity>) has its own THREE.Object3D.-->
+
+    <!--Assets-->
+    <a-assets>
+      <!--Creating shooter model/asset, called in the later entity-->
+      <!-- Defining an asset item with an ID of "shooter" and a source file of
+      "./models/shooter/gun.gltf". This asset item is likely a 3D model of a gun that will be used
+      as the shooter in the virtual reality shooting game. -->
+      <a-asset-item id="shooter" src="./models/shooter/gun.gltf"></a-asset-item>
+
+    </a-assets>
+
+    <!--Light-->
+    <a-entity light="type: ambient; color: yellow; intensity:0.5"></a-entity>
+
+    <!-- 
+    This code is creating a camera and a shooter (weapon) entity in the virtual reality scene. 
+    The camera is positioned at (0, 1.6, 0) and has the ability to move using the wasd-controls and look
+    around using the look-controls. 
+    The shooter entity is a 3D model of a gun that is loaded in from
+    an external file using the gltf-model attribute. It is positioned at (0, -4.4, 3) and 
+    has a rotation of (0, 180, 0) and a scale of (0.35, 1, 1). 
+    Additionally, a cursor is added to the camera entity to allow the user to interact with the virtual reality scene. 
+    -->
+    <!--Camera and Cursor-->
+    <a-entity id="camera" camera position="0 1.6 0" wasd-controls look-controls="pointerLockEnabled: false">
+      <!--Creating Weapon/shooter-->
+      <a-entity id="weapon" gltf-model="#shooter" position="0 -4.4 3" rotation="0 180 0" scale="0.35 1 1">
+      </a-entity>
+      <a-cursor></a-cursor>
+    </a-entity>
+
+    <!--Bullets-->
+    <!-- `<a-entity bullets></a-entity>` is creating an A-Frame entity with the attribute "bullets". This
+   is likely a custom component that adds the functionality of shooting bullets in the virtual
+   reality shooting game. The code for this component is likely defined in the "shoot.js" file that
+   is linked to the HTML document. -->
+    <a-entity bullets></a-entity>
+
+    <!-- This code is creating a ground plane in the virtual reality scene. It is an A-Frame entity with
+    the tag `<a-plane>`. The ID of the entity is "ground". The `repeat` attribute is set to "5 5",
+    which means that the texture of the plane will be repeated 5 times in both the x and y
+    directions. The `position` attribute is set to "0 1 0", which means that the plane is positioned
+    at the center of the scene with a height of 1 unit above the ground. The `rotation` attribute is
+    set to "-90 0 0", which means that the plane is rotated 90 degrees around the x-axis so that it
+    lies flat on the ground. The `height` and `width` attributes are set to 200 units, which means
+    that the plane is a large square. The `color` attribute is set to "#FBF2D4", which is a light
+    beige color. The `static-body` attribute is set to "true", which means that the plane is a
+    static object that does not move. The `visible` attribute is set to "true", which means that the
+    plane is -->
+    <!--Ground-->
+    <a-plane id="ground" repeat="5 5" position="0 1 0" rotation="-90 0 0" height="200" width="200" color="#FBF2D4"
+      static-body visible="true">
+    </a-plane>
+
+    <!--Boxes/targets-->
+    <!-- These lines of code are creating six A-Frame entities with the tag `<a-box>`. These entities are
+   likely targets or obstacles in the virtual reality shooting game. Each entity has a `position`
+   attribute that sets its position in the scene, a `color` attribute that sets its color to
+   "tomato", and `depth`, `height`, and `width` attributes that set its dimensions to 1 unit in each
+   direction. The `position` attribute values are set so that the boxes are positioned at different
+   locations along the z-axis, with a distance of 2 units between each box. -->
+    <a-box position="-2 1.5 -10" color="tomato" depth="1" height="1" width="1"></a-box>
+
+    <a-box position="0 1.5 -10" color="pink" depth="1" height="1" width="1"></a-box>
+
+    <a-box position="2 1.5 -10" color="orange" depth="1" height="1" width="1"></a-box>
+
+    <a-box position="-1 2.5 -10" color="lightblue" depth="1" height="1" width="1"></a-box>
+
+    <a-box position="1 2.5 -10" color="green" depth="1" height="1" width="1"></a-box>
+
+    <a-box position="0 3.5 -10" color="yellow" depth="1" height="1" width="1"></a-box>
+  </a-scene>
+</body>
+
+</html>
